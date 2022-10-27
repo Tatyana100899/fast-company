@@ -4,8 +4,7 @@ import User from './user';
 
 const Users = ({users, ...rest}) => {   
     return (
-        <>
-        <User />
+        <>        
         <h3><span className={"badge bg-" + (users.length > 0 ? "primary" : "danger")}>{<SearchStatus/>}</span></h3>
            {users.length ? (
             <table className="table">           

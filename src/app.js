@@ -4,8 +4,9 @@ import SearchStatus from './components/searchStatus';
 import API from './api';
 
 function App() {
+    // console.log(API);
     <API/>    
-    const [users, setUsers] = useState();
+    const [users, setUsers] = useState(API.fetchAll());
     const handleDelete = (userId) => {       
        setUsers(users.filter((user) => user._id !== userId));             
     };
@@ -16,7 +17,7 @@ function App() {
     return (
         <div>            
             <SearchStatus/>
-            <Users/>            
+            <Users />            
         </div>
     );
 }

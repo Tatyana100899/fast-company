@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Qualitie from './qualitie';
 import BookMark from './bookmark';
 
-const User = (_id) => {
+const User = ({_id, name, qualities, profession, completedMeetings, rate}) => {
+    
     return (
         <tr key={_id}>
             <td>{name}</td>
@@ -13,10 +14,10 @@ const User = (_id) => {
             <td>{profession.name}</td>
             <td>{completedMeetings}</td>
             <td>{rate} /5</td>                
-            <td>
+            {/* <td>
                 <BookMark status={bookmark} onClick={() => {onToggleBookMark(_id)}}> </BookMark>
-            </td>
-            <td>
+            </td> */}
+            {/* <td>
                 <button 
                     key={user._id}               
                     className="btn btn-danger m-2" 
@@ -24,7 +25,7 @@ const User = (_id) => {
                 >
                     delete
                 </button>
-            </td>
+            </td> */}
         </tr>
     )    
 }
