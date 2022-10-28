@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import Qualitie from './qualitie';
 import BookMark from './bookmark';
 
-const User = ({_id, name, qualities, profession, completedMeetings, rate, onDelete}) => {
-    
+const User = ({_id, name, qualities, profession, completedMeetings, rate, onToggle, onDelete}) => {
+    // console.log(onToggle); 
     return (
         <tr key={_id}>
             <td>{name}</td>
             <td>{qualities.map((qual) =>(
-                <Qualitie {...qual}/>
+                <Qualitie key={qual._id} {...qual}/>
             ))}
             </td>
             <td>{profession.name}</td>
             <td>{completedMeetings}</td>
             <td>{rate} /5</td>                
             <td>
-                <BookMark />
+                <BookMark onClick={onToggle}/>
             </td>
             <td>
                 <button 

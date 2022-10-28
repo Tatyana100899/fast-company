@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import SearchStatus from './searchStatus';
 import User from './user';
 
-const Users = ({users, ...rest}) => {   
+const Users = ({users, onDelete, onToggle}) => {  
+    
     return (
         <>        
-        <h3><span className={"badge bg-" + (users.length > 0 ? "primary" : "danger")}>{<SearchStatus/>}</span></h3>
+        <h3><span className={"badge bg-" + (users.length > 0 ? "primary" : "danger")}><SearchStatus length={users.length}/></span></h3>
            {users.length ? (
             <table className="table">           
             <thead>
@@ -21,7 +22,7 @@ const Users = ({users, ...rest}) => {
             </thead>
             <tbody>
                 {users.map(user => 
-                    <User {...rest} {...user} key={user._id}/>)}                
+                    <User onToggle={onToggle} onDelete={onDelete} key={user._id} {...user}/>)}                
             </tbody>
         </table>
         ) : null}   
