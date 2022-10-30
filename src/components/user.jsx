@@ -17,7 +17,7 @@ const User = ({_id, name, qualities, profession, completedMeetings, rate, bookma
             <td>
                 <button key={_id}
                 onClick={()=>onToggle(_id)}>
-                    <BookMark />
+                    <BookMark bookmark={bookmark}/>
                 </button>                
             </td>
             <td>
