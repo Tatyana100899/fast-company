@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchStatus from './searchStatus';
 import User from './user';
 

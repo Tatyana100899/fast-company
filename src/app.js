@@ -10,12 +10,16 @@ function App() {
     };
 
     const handleToggleBookMark = (userId) => {
-        let elem = users.find((user) => user._id == userId);
-    //     // setUsers(users.filter((user) => user._id !== userId));
-        elem.bookmark = true;
-        console.log(elem.bookmark );
-        console.log(users);
-    };   
+        
+        setUsers((prevState) => {            
+            return prevState.map((user) => {
+              if (user._id === userId) {
+              return {...user, bookmark: user.bookmark = !user.bookmark};
+            }              
+                return user
+            })
+          })
+}  
 
     return (
         <div>       
