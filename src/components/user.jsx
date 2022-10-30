@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Qualitie from './qualitie';
 import BookMark from './bookmark';
 
-const User = ({_id, name, qualities, profession, completedMeetings, rate, onToggle, onDelete}) => {
-    // console.log(onToggle); 
+const User = ({_id, name, qualities, profession, completedMeetings, rate, bookmark, onToggle, onDelete}) => {
+    
     return (
         <tr key={_id}>
             <td>{name}</td>
@@ -15,7 +15,10 @@ const User = ({_id, name, qualities, profession, completedMeetings, rate, onTogg
             <td>{completedMeetings}</td>
             <td>{rate} /5</td>                
             <td>
-                <BookMark onClick={onToggle}/>
+                <button key={_id}
+                onClick={()=>onToggle(_id)}>
+                    <BookMark />
+                </button>                
             </td>
             <td>
                 <button 
